@@ -18,6 +18,8 @@ DraftAnswer Tool (to synthesize information into a structured response)
 #Key Components and Implementation
 1. Prompt + LLM for Drafting
 The draft_answer_fn is a Python function wrapped in a Tool. It uses a structured prompt template combined with ChatGroq's Llama 3-70B model to generate high-quality professional responses. Here’s how:
+
+
  prompt = PromptTemplate(
     input_variables=["research_content"],
     template="""
