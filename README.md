@@ -11,6 +11,17 @@ This node simulates calling an LLM that decides which tool to use based on the i
 2. Tool Execution Node (tools)
 This node houses the actual tools the agent can use, such as:
 
-.TavilySearchResults Tool (to search the web)
+TavilySearchResults Tool (to search the web)
 
-.DraftAnswer Tool (to synthesize information into a structured response)
+DraftAnswer Tool (to synthesize information into a structured response)
+
+#Key Components and Implementation
+1. Prompt + LLM for Drafting
+The draft_answer_fn is a Python function wrapped in a Tool. It uses a structured prompt template combined with ChatGroq's Llama 3-70B model to generate high-quality professional responses. Here’s how:
+ prompt = PromptTemplate(
+    input_variables=["research_content"],
+    template="""
+You are an expert AI assistant...
+"""
+)
+chain = prompt | ChatGroq(...)
