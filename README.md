@@ -51,7 +51,7 @@ Visualizing the Graph:
 You can visualize the graph structure using:
 This helps debug and understand the sequence of operations clearly.
 
-![image alt](https://github.com/quicklabcicd25/Multi_Tool_Agent/blob/7f8c1bb2963cef2d0ba8c218d15a5879177aa0d9/IMG_20250501_010326.jpg)
+![image alt](https://github.com/quicklabcicd25/Multi_Tool_Agent/blob/7f8c1bb2963cef2d0ba8c218d15a5879177aa0d9/IMG_20250501_010326.jpg)   ![image alt](https://github.com/quicklabcicd25/Multi_Tool_Agent/blob/c8ec681487f4ecb3cd99cdc82dd37edb109debb3/agents_graph.png)
 
 
 
