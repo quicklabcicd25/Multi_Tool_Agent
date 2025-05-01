@@ -27,3 +27,61 @@ You are an expert AI assistant...
 """
 )
 chain = prompt | ChatGroq(...)
+
+
+2. Connecting LLMs to Tools with ToolNode
+LangGraph's ToolNode allows us to plug in tools as functional nodes in the graph. Each tool is defined using the Tool class from LangChain. To connect them:
+used conditional edges so that the LLM node (tool_calling_llm) decides which path the graph should take next.
+3. Tavily Tool for Web Search (Optional Extension)
+Although not added in the working graph above, you can easily add Tavily with:
+Then, include it in ToolNode([...]) alongside the drafting tool. Tavily handles the real-time web search part of the agent.
+
+How the Graph Works
+The graph is built using StateGraph, where a State is passed between nodes. The steps flow like this:
+
+Input query starts at START
+
+tool_calling_llm simulates a decision process (which could later be replaced with an actual LLM)
+
+Based on simple logic (e.g., always use tools), it routes to the tools node
+
+The tool executes and the graph ends at END
+
+Visualizing the Graph:
+You can visualize the graph structure using:
+This helps debug and understand the sequence of operations clearly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Conclusion:
+This Deep Research Agent is modular, extensible, and intelligent. By combining LLMs, tools like Tavily, and LangGraph’s node-based orchestration, you create a robust pipeline capable of tackling real-world information gathering and synthesis tasks in a highly scalable and transparent way.
+
+Let me know if you want this formatted as a PDF or integrated into a report!
+
+
+
+
+
+
